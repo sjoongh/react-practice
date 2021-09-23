@@ -1,5 +1,6 @@
 import React from 'react';
 import PropClass from './components/PropClass';
+import PropFunc from './components/PropFunc';
 
 function App() {
     const messageFromChild = (message) => {
@@ -9,6 +10,7 @@ function App() {
     return (
         <div>
             <h2>Props in Class Component</h2>
+            
             <PropClass prop_str="string value"
             prop_num={ 10 }
             prop_false={ false }
@@ -17,7 +19,24 @@ function App() {
                 name: "홍길동",
                 age: 28
             }} 
-            prop_func={ messageFromChild }/>
+            prop_func={ messageFromChild }
+            >
+                <h4>Children</h4>
+                <p>자식 컴포넌트</p>
+            </PropClass>
+
+            <h2>Props in function Component</h2>
+            
+            <PropFunc
+                prop_str="string value"
+                prop_num={ 10 }
+                prop_false={ false }
+                prop_true
+                prop_obj={{
+                    name: "홍길동",
+                    age: 28
+                }}
+                prop_func={ messageFromChild } />
         </div>
     )
 }
