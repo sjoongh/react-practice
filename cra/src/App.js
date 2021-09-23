@@ -10,6 +10,7 @@ const items = [
   { id: 4 },
 ]
 // Id를 key로 사용(basic)
+// 함수 바깥쪽에서 const renderItem전역 선언
 const renderItem = item => <Item key={item.id}
 name={item.name}
 checked={item.checked} />
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       { items.map(renderItem)}
+      {/* 함수 안쪽에서 만듬(비추) */}
       {/* { items.map(item => (
         <Item key={ item.id } name={ item.name } checked={ item.checked} />
         ))} */}
